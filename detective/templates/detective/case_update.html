@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Case</title>
+</head>
+
+<body>
+
+    <h1>✏️ Update Case</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Title:</label><br>
+        <input type="text" name="title" value="{{ case.title }}"><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description">{{ case.description }}</textarea><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location" value="{{ case.location }}"><br><br>
+
+        <label>Difficulty:</label><br>
+        <input type="text" name="difficulty" value="{{ case.difficulty }}"><br><br>
+
+        <button type="submit">Update Case</button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'case_detail' case.id %}">
+        Cancel
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ case.title }}</title>
+</head>
+
+<script src="{% static 'detective/js/script.js' %}"></script>
+
+<body>
+
+    <h1>🕵️ {{ case.title }}</h1>
+
+    <p>{{ case.description }}</p>
+
+    <p>📍 Location: {{ case.location }}</p>
+
+    <p>⚡ Difficulty: {{ case.difficulty }}</p>
+
+    <p>📅 Created: {{ case.created_at }}</p>
+
+    <button onclick="investigate()">
+         Investigate Case
+    </button>
+
+    <br><br>
+
+    <a href="{% url 'case_delete' case.id %}">
+        <button>🗑️ Delete Case</button>
+    </a>
+
+    <a href="{% url 'case_update' case.id %}">
+        <button>✏️ Update Case</button>
+    </a>
+
+    <a href="{% url 'case_list' %}">← Back to Cases</a>
+
+</body>
+</html>

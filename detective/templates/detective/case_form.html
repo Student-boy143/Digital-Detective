@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Case</title>
+</head>
+
+<body>
+
+    <h1>🔎 Create New Case</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Create Case
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'case_list' %}">
+        ← Back to Cases
+    </a>
+
+</body>
+</html>

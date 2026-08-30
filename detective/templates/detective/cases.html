@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cases - Digital Detective</title>
+    <link rel="stylesheet" href="{% static 'detective/css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>🕵️ Available Cases</h1>
+
+    {% for case in cases %}
+
+    <div class="case-card">
+
+        <h2>
+            <a href="{% url 'case_detail' case.id %}">
+                {{ case.title }}
+            </a>
+        </h2>
+
+        <p>{{ case.description }}</p>
+
+        <p>📍 {{ case.location }}</p>
+
+        <p>⚡ Difficulty: {{ case.difficulty }}</p>
+
+    </div>
+
+    {% empty %}
+
+    <p>No cases available.</p>
+
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Case</title>
+</head>
+
+<body>
+
+    <h1>⚠️ Delete Case</h1>
+
+    <p>
+        Are you sure you want to delete
+        <strong>{{ case.title }}</strong>?
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit">
+            Yes, Delete
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'case_detail' case.id %}">
+        Cancel
+    </a>
+
+</body>
+</html>
