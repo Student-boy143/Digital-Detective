@@ -79,6 +79,13 @@ def case_create(request):
         {'form': form}
     )
 
+def jsx_demo(request):
+    return render(request, 'detective/jsx_demo.html')
+
+
+def verbatim_demo(request):
+    return render(request, 'detective/verbatim_demo.html')
+
 class CaseListView(ListView):
   model = Case
   template_name = 'detective/cases.html'

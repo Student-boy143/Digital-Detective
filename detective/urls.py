@@ -23,4 +23,6 @@ urlpatterns = [
         name='case_delete'
     ),
     path('cases/create/', views.case_create, name='case_create'),
+    path('jsx-demo/', views.jsx_demo, name='jsx_demo'),
+    path('verbatim-demo/', views.verbatim_demo, name='verbatim_demo'),
 ]
